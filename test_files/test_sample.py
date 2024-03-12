@@ -7,7 +7,8 @@ class TestClassOne:
 
     def test_two(self):
         x = "hi"
-        assert hasattr(x, "hi")
+        assert hasattr(x, "upper")
+        #To pass, the 2nd arg must contain an attribute of the string class in python.
 
 class TestClassTwo:
     @staticmethod    
@@ -15,7 +16,7 @@ class TestClassTwo:
         return x + 1
 
     def test_answer(self):
-        assert self.func(3) == 5
+        assert self.func(3) == 4
         
 class TestClassThree:
     value = 0
@@ -26,3 +27,10 @@ class TestClassThree:
         
     def test_four(self):
         assert self.value == 1
+        # Example of a failure bc there is was no self.value declaration.
+        
+    def test_five(self):
+        y = "string"
+        xy = y.startswith("s")
+        assert xy
+        # attributes of string class practice 
